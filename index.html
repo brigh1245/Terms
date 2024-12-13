@@ -4,91 +4,149 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Terms Of Services UI Design</title>
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	<script defer src="script.js"></script>
-</head>	
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			background-color: #f4f4f4;
+		}
+
+		.flex_center {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.tc_main {
+			background: #fff;
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+			max-width: 500px;
+			width: 100%;
+		}
+
+		.tc_content {
+			text-align: center;
+			margin-bottom: 20px;
+		}
+
+		.tc_top .icon {
+			font-size: 48px;
+			color: #4caf50;
+			margin-bottom: 10px;
+		}
+
+		.tc_top .title {
+			font-size: 24px;
+			font-weight: bold;
+		}
+
+		.tc_top .info {
+			font-size: 14px;
+			color: #666;
+		}
+
+		.tc_bottom .title {
+			font-size: 18px;
+			margin: 10px 0;
+		}
+
+		.tc_bottom .info p {
+			font-size: 14px;
+			color: #333;
+			margin: 5px 0;
+		}
+
+		.tc_btns {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		button {
+			padding: 10px 20px;
+			font-size: 16px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		button.accept {
+			background-color: #4caf50;
+			color: white;
+		}
+
+		button.decline {
+			background-color: #f44336;
+			color: white;
+		}
+	</style>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const proceedBtn = document.getElementById("proceed_btn");
+			const exitBtn = document.getElementById("exit_btn");
+
+			// Navigate to another page when "Proceed" is clicked
+			proceedBtn.addEventListener("click", () => {
+				// Replace 'nextpage.html' with the actual page URL you want to navigate to
+				window.location.href = "nextpage.html";
+			});
+
+			// Exit the page when "Exit" is clicked
+			exitBtn.addEventListener("click", () => {
+				// Close the tab or navigate to a different page
+				if (confirm("Are you sure you want to exit?")) {
+					window.close();
+				} else {
+					alert("You chose to stay on the page.");
+				}
+			});
+		});
+	</script>
+</head>
 <body>
-
-<section class="flex_center">
-  <div class="tc_main">
-    <div class="tc_content">
-      <div class="tc_top">
-        <div class="icon">
-          <i class="fa-solid fa-clipboard"></i>
-        </div>
-        <div class="title">
-          <p id="terms_title">Terms of Service</p>
-        </div>
-        <div class="info" id="terms_info">
-          Please review the terms and conditions carefully before proceeding. Failure to comply may result in consequences.
-        </div>
-      </div>
-      <div class="tc_bottom">
-        <div class="title">
-          <p>Please read through the terms before accepting them.</p>
-        </div>
-        <div class="info" id="terms_details">
-          <p>By proceeding, you agree to abide by the rules and policies outlined herein. Ensure you have read them thoroughly.</p>
-          <p>Your acceptance indicates compliance with all outlined terms and conditions.</p>
-          <p>For any concerns or clarifications, refer to our support team or documentation.</p>
-          <p>Keep a copy of the terms for your personal records.</p>
-          <p>These terms are subject to updates. Stay informed about changes.</p>
-          <p>We value your cooperation and adherence to these conditions.</p>
-        </div>
-      </div>
-    </div>
-    <div class="tc_btns">
-      <button class="accept" id="proceed_btn">
-        Proceed
-      </button>
-      <button class="decline" id="exit_btn">
-        Exit
-      </button>
-    </div>
-  </div>
-</section>
-
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    // Update text dynamically with JavaScript
-    const termsTitle = document.getElementById("terms_title");
-    const termsInfo = document.getElementById("terms_info");
-    const termsDetails = document.getElementById("terms_details");
-    const proceedBtn = document.getElementById("proceed_btn");
-    const exitBtn = document.getElementById("exit_btn");
-
-    // Set English content
-    termsTitle.textContent = "Terms of Service";
-    termsInfo.textContent = "Please review the terms and conditions carefully before proceeding.";
-    termsDetails.innerHTML = `
-      <p>By proceeding, you agree to abide by the rules and policies outlined herein. Ensure you have read them thoroughly.</p>
-      <p>Your acceptance indicates compliance with all outlined terms and conditions.</p>
-      <p>For any concerns or clarifications, refer to our support team or documentation.</p>
-      <p>Keep a copy of the terms for your personal records.</p>
-      <p>These terms are subject to updates. Stay informed about changes.</p>
-      <p>We value your cooperation and adherence to these conditions.</p>
-    `;
-
-    // Update button text
-    proceedBtn.textContent = "Proceed";
-    exitBtn.textContent = "Exit";
-
-    // Add functionality to buttons
-    proceedBtn.addEventListener("click", () => {
-      alert("You have accepted the terms. Proceeding...");
-    });
-
-    exitBtn.addEventListener("click", () => {
-      alert("You have declined the terms. Exiting...");
-    });
-  });
-</script>
-
+	<section class="flex_center">
+		<div class="tc_main">
+			<div class="tc_content">
+				<div class="tc_top">
+					<div class="icon">
+						<i class="fa-solid fa-clipboard"></i>
+					</div>
+					<div class="title">
+						<p id="terms_title">Terms of Service</p>
+					</div>
+					<div class="info" id="terms_info">
+						Please review the terms and conditions carefully before proceeding. Failure to comply may result in consequences.
+					</div>
+				</div>
+				<div class="tc_bottom">
+					<div class="title">
+						<p>Please read through the terms before accepting them.</p>
+					</div>
+					<div class="info" id="terms_details">
+						<p>By proceeding, you agree to abide by the rules and policies outlined herein. Ensure you have read them thoroughly.</p>
+						<p>Your acceptance indicates compliance with all outlined terms and conditions.</p>
+						<p>For any concerns or clarifications, refer to our support team or documentation.</p>
+						<p>Keep a copy of the terms for your personal records.</p>
+						<p>These terms are subject to updates. Stay informed about changes.</p>
+						<p>We value your cooperation and adherence to these conditions.</p>
+					</div>
+				</div>
+			</div>
+			<div class="tc_btns">
+				<button class="accept" id="proceed_btn">
+					Proceed
+				</button>
+				<button class="decline" id="exit_btn">
+					Exit
+				</button>
+			</div>
+		</div>
+	</section>
 </body>
 </html>
-
-
-
-
-
-
