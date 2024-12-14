@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Terms Of Services| Y</title>
+	<style>
+		
+	</style>
+	<script>
+		document.addEventListener("DOMContentLoaded", () => {
+			const proceedBtn = document.getElementById("proceed_btn");
+			const exitBtn = document.getElementById("exit_btn");
+
+			// Navigate to another page when "Proceed" is clicked
+			proceedBtn.addEventListener("click", () => {
+				// Replace 'nextpage.html' with the actual page URL you want to navigate to
+				window.location.href = "nextpage.html";
+			});
+
+			// Exit the page when "Exit" is clicked
+			exitBtn.addEventListener("click", () => {
+				// Close the tab or navigate to a different page
+				if (confirm("Are you sure you want to exit?")) {
+					window.close();
+				} else {
+					alert("You chose to stay on the page.");
+				}
+			});
+		});
+	</script>
+</head>
+<body>
+	<section class="flex_center">
+		<div class="tc_main">
+			<div class="tc_content">
+				<div class="tc_top">
+					<div class="icon">
+						<i class="fa-solid fa-clipboard"></i>
+					</div>
+					<div class="title">
+						<p id="terms_title">Terms of Service</p>
+					</div>
+					<div class="info" id="terms_info">
+						Please review the terms and conditions carefully before proceeding. Failure to comply may result in consequences.
+					</div>
+				</div>
+				<div class="tc_bottom">
+					<div class="title">
+						<p>Please read through the terms before accepting them.</p>
+					</div>
+					<div class="info" id="terms_details">
+						<p>By proceeding, you agree to abide by the rules and policies outlined herein. Ensure you have read them thoroughly.</p>
+						<p>Your acceptance indicates compliance with all outlined terms and conditions.</p>
+						<p>For any concerns or clarifications, refer to our support team or documentation.</p>
+						<p>Keep a copy of the terms for your personal records.</p>
+						<p>These terms are subject to updates. Stay informed about changes.</p>
+						<p>We value your cooperation and adherence to these conditions.</p>
+					</div>
+				</div>
+			</div>
+			<div class="tc_btns">
+				<button class="accept" id="proceed_btn">
+					Proceed
+				</button>
+				<button class="decline" id="exit_btn">
+					Exit
+				</button>
+			</div>
+		</div>
+	</section>
+</body>
+</html>
